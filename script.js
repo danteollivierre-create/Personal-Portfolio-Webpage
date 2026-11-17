@@ -6,9 +6,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     console.log(lightModeButton);
 
-
-
-
 const savedTheme = localStorage.getItem("theme")
 
 if (savedTheme === "light"){
@@ -56,22 +53,24 @@ if(hour < 12){
 
 alert(message);
 
+
+window.onload = function(){
 const clock = document.getElementById("clock");
 
 function runningClock(){
     const currentTime = new Date();
-    let hours = now.getHours();
-    let minutes = now.getminutes();
-    let seconds = now.getSeconds();
+    let hours = currentTime.getHours();
+    let minutes = currentTime.getMinutes();
+    let seconds = currentTime.getSeconds();
 
-    minutes = string(minutes).padStart(2,"0");
-    seconds = string(minutes).padStart(2,"0");
+    minutes = String(minutes).padStart(2,"0");
+    seconds = String(seconds).padStart(2,"0");
 
  clock.textContent = `${hours}:${minutes}:${seconds}`;
 
 }
 
-updateclock();
-setInterval(updateclock, 1000);
+runningClock();
+setInterval(runningClock, 1000);
 
-
+};
