@@ -42,16 +42,18 @@ lightModeButton.addEventListener("click",() => {
 
 //date dependant msg thing
 
-const Greeting = document.getElementsById("Greeting");
+const hour = new Date().getHours();
 
 let message;
 
 if(hour < 12){
     message = "Good Morning!";
 } else if(hour < 18){
-    message = "Good Afternoon!"
+    message = "Good Afternoon!";
 } else {
-    message = "Good Night!"
+    message = "Good Night!";
 }
 
 alert(message);
+
+
