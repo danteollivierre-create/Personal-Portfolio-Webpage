@@ -56,4 +56,22 @@ if(hour < 12){
 
 alert(message);
 
+const clock = document.getElementById("clock");
+
+function runningClock(){
+    const currentTime = new Date();
+    let hours = now.getHours();
+    let minutes = now.getminutes();
+    let seconds = now.getSeconds();
+
+    minutes = string(minutes).padStart(2,"0");
+    seconds = string(minutes).padStart(2,"0");
+
+ clock.textContent = `${hours}:${minutes}:${seconds}`;
+
+}
+
+updateclock();
+setInterval(updateclock, 1000);
+
 
